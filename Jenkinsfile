@@ -7,7 +7,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git (
-                    branch: 'main',
+                    branch: 'helm',
                     url: 'https://github.com/Sabaa-Abdennabi/Node_App.git'
                 )
 
