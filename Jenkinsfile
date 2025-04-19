@@ -6,7 +6,11 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Sabaa-Abdennabi/Node_App.git'
+                git (
+                    branch: 'main',
+                    url: 'https://github.com/Sabaa-Abdennabi/Node_App.git'
+                )
+
             }
         }
         stage('Build Docker Image') {
