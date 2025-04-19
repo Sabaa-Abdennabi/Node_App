@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'sabaaabn/node'
+        DOCKER_IMAGE = 'sabaaabn/node',
+        HELM_CHART = '.' 
     }
     stages {
         stage('Clone Repository') {
