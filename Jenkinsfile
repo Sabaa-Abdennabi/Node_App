@@ -34,13 +34,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Kubernetes') {
+        stage('Deploy with Helm') {
             steps {
                 script {
-                    bat "kubectl apply -f deployment.yaml"
-                    bat "kubectl apply -f service.yaml"
+                    bat """
+                        helm upgrade --install node-app $HELM_CHART \
+                            --set image.repository=$DOCKER_IMAGE \
+                            --set image.tag=latest
+                    """
                 }
             }
-        }
+    }
     }
 }

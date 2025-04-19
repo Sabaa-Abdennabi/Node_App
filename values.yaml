@@ -1,0 +1,22 @@
+# node-app/values.yaml
+
+# Image settings (matches your Docker Hub image)
+image:
+  repository: sabaaabn/node  # Your Docker Hub image
+  tag: latest               # Or use a specific version (e.g., v1.0.0)
+  pullPolicy: IfNotPresent
+
+# Deployment settings
+replicaCount: 2            # Number of pods
+
+# Service settings
+service:
+  type: LoadBalancer       # Expose externally (use ClusterIP for internal)
+  port: 80                 # External port
+  targetPort: 3000         # Matches your Node.js app port
+
+# Resource limits (optional)
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
