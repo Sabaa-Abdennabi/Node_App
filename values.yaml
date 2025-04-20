@@ -20,11 +20,9 @@ resources:
   limits:
     cpu: 500m
     memory: 512Mi
-    
+
 serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
+  create: false
 
 ingress:
   enabled: false 
