@@ -20,11 +20,3 @@ resources:
   limits:
     cpu: 500m
     memory: 512Mi
-
-serviceAccount:
-  create: false
-
-ingress:
-  enabled: false 
-auto-scaling:
-  enabled: false

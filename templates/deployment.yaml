@@ -1,7 +1,9 @@
+# node-app/templates/deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ .Release.Name }}-deployment"
+  name: {{ .Release.Name }}-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -19,4 +21,4 @@ spec:
         ports:
         - containerPort: {{ .Values.service.targetPort }}
         resources:
-         "{{- toYaml .Values.resources | nindent 10 }}" 
+          {{- toYaml .Values.resources | nindent 10 }}
