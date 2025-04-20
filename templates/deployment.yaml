@@ -22,3 +22,4 @@ spec:
         - containerPort: {{ .Values.service.targetPort }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
+        command: ["node", "app.js"]
